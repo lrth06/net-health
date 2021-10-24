@@ -21,6 +21,7 @@ git clone https://github.com/lrth06/net-health.git
 cd net-health
 ```
 
+<!--
 ### To run without Docker:
 
 **Note:** You **MUST** have a mongodb instance running locally to use without docker.
@@ -36,7 +37,7 @@ in a new terminal window:
 cd client
 npm install
 npm start
-```
+``` -->
 
 ### To run with Docker (recommended):
 
