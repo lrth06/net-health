@@ -1,0 +1,28 @@
+version: "3.3"
+services:
+  client:
+    image: lrth06/net-health-client:latest
+    container_name: net-health-client
+    ports:
+      - "80:80"
+    depends_on:
+      - "server"
+      - "mongodb"
+
+  server:
+    image: lrth06/net-health-server:latest
+    container_name: net-health-server
+    ports:
+      - "8888:8888"
+      - "8889:8889"
+    depends_on:
+      - "mongodb"
+
+  mongodb:
+    image: mongo:focal
+    container_name: net-health-mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - "/data/db"
+    command: --quiet
